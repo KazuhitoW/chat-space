@@ -1,0 +1,157 @@
+// Place all the styles related to the messages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.header {
+  background: #38AEF0;
+  text-align: center;
+  color: $font-color;
+}
+
+.contents {
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+  width: 100vw;
+
+// side-barの作成
+  .side-bar {
+    float: left;
+    width: 300px;
+    height: 100vh;
+    background-color: #2f3e51;
+    &__head {
+      background-color: #253141;
+      color: $font-color;
+      padding: 35px 20px;
+      .user {
+        display: inline-block;
+      }
+      .user-icon {
+        display: inline-block;
+        float: right;
+      }
+    }
+    &__body {
+      color: $font-color;
+      text-indent: 20px;
+      list-style: none;
+      .sample1 {
+        font-size: $sample-font-size;
+        margin: 20px 0 5px 0;
+      }
+      .comment1 {
+        color: $font-color;
+        font-size: $comment-font-size;
+        margin: 0 0 40px;
+      }
+      .sample2 {
+        color: $font-color;
+        font-size: $sample-font-size;
+        margin: 20px 0 5px 0;
+      }
+      .comment2 {
+        color: $font-color;
+        font-size: $comment-font-size;
+        margin: 0 0 40px;
+      }
+    }
+  }
+
+  // chat-barの作成
+  .chat-bar {
+    float: left;
+    height: 100vh;
+    width: calc(100vw - 300px);
+    &__head {
+      background-color: white;
+      .sample {
+        font-size: 20px;
+        color: #333333;
+        display: inline-block;
+        padding: 29px 0 11px 40px;
+      }
+      .edit {
+        float: right;
+        border: solid 3px #38AEF0;
+        padding: 5px 20px;
+        color: #38AEF0;
+        margin: 28px 40px 0 0;
+      }
+      .members {
+        font-size: 12px;
+        color: #999999;
+        padding: 0 0 6px 40px;
+      }
+    }
+    &__body {
+      background-color: #eeeeee;
+      height: calc(100vh - 184px);
+      .name1 {
+        display: inline-block;
+        padding: 46px 0 10px 40px;
+        font-size: 16px;
+        font-weight: bold;
+        color: #434A54;
+      }
+      .daily1 {
+        color: #999999;
+        display: inline-block;
+        text-indent: 10px;
+        font-size: 12px;
+      }
+      .comment3{
+        display: block;
+        text-indent: 40px;
+        font-size: 14px;
+      }
+      .name2 {
+        display: inline-block;
+        padding: 40px 0 10px 40px;
+        font-size: 16px;
+        font-weight: bold;
+        color: #434A54;
+      }
+      .daily2 {
+        color: #999999;
+        display: inline-block;
+        text-indent: 10px;
+        font-size: 12px;
+      }
+      .comment4{
+        display: block;
+        text-indent: 40px;
+        font-size: 14px;
+      }
+    }
+    &__send {
+      background-color: #AAAAAA;
+      height: 90px;
+      &__message {
+        height: 50px;
+        padding: 20px 0 20px 40px;
+        .text {
+          width: calc(100vw - 500px);
+          background-color: white;
+          text-indent: 10px;
+          color: #434A54;
+          padding: 13px 0;
+          display: inline-block;
+        }
+        .fa.fa-image {
+          position: relative;
+          right: 30px;
+        }
+        .send {
+          background-color: #38AEF0;
+          color: white;
+          // display: inline-block;
+          height: 50px;
+          padding: 17px 26px;
+        }
+      }
+    }
+  }
+}
