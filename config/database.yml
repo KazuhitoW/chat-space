@@ -31,7 +31,7 @@
 development:
   adapter: mysql2
   encoding: utf8
-  database: blog_development
+  database: chat-space_development
   pool: 5
   username: root
   password:
