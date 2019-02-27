@@ -1,19 +1,4 @@
 .contents
-  / .side-bar
-  /   .side-bar__head
-  /     %h3.user seo
-  /     %ul.user-icon
-  /       =fa_icon "edit"
-  /       =fa_icon "cog"
-  /   .side-bar__body
-  /     %li.sample1
-  /       サンプル
-  /     %li.comment1
-  /       よろしくお願いします。
-  /     %li.sample2
-  /       ABC
-  /     %li.comment2
-  /       まだメッセージはありません。
   = render partial: "shared/side_bar"
   .chat-bar
     .chat-bar__head
@@ -21,25 +6,15 @@
         sample
       %span.edit Edit
       %ul.members
-        Members: seo neko
-    .chat-bar__body
-      %ul.name1 seo
-      %ul.daily1 2017/05/18 13:19:51 UTC
-      %ul.comment3 Hello world!
-      %ul.name2 seo
-      %ul.daily2 2017/05/18 13:20:00 UTC
-      %ul.comment4 よろしくお願いします
-    .chat-bar__send
-      .chat-bar__send__message
-        %ul.text type a message
-        =fa_icon "image"
-        %span.send Send
-
-  .form
-    = form_for [@group, @message] do |f|
-      = f.text_field :content, class: 'form__message', placeholder: 'type a message'
-      .form__mask
-        = f.label :image, class: 'form__mask__image' do
-          = fa_icon 'picture-o', class: 'icon'
-          = f.file_field :image, class: 'hidden'
-      = f.submit 'Send', class: 'form__submit'
+        Member :
+        = current_user.name
+    .chat-bar__messages
+      = render @messages
+    .chat-bar__form
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        .chat-bar__form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
