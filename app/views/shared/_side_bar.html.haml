@@ -1,17 +1,8 @@
 .side-bar
-  / .header
   .side-bar__head
-    / %h3.header__name
     %h3.user
       = current_user.name
-    / %ul.header__lists
     %ul.user-icon
-      / %li.list
-      /   = link_to new_group_path do
-      /     = fa_icon 'pencil-square-o', class: 'icon'
-      / %li.list
-      /   = link_to edit_user_path(current_user) do
-      /     = fa_icon 'cog', class: 'icon'
       = link_to new_group_path do
         =fa_icon "edit"
       = link_to edit_user_path(current_user) do
@@ -23,4 +14,4 @@
           .group__name
             = group.name
           .group__message
-            メッセージはまだありません。
+            = group.show_last_message
